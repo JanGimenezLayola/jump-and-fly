@@ -29,13 +29,21 @@ function main() {
       </section>
     `);
 
-    var canvas = gameScreen.querySelector('canvas');
+    var canvas = document.querySelector('canvas');
     var game = new Game(canvas);
 
     game.startGame();
 
-    window.setTimeout(createGameOverScreen, "3000");
-  };
+    document.addEventListener('keydown', function(event) {
+      console.log(event)
+      if(event.key === 'ArrowLeft') {
+        game.player.setDirection(1);
+      } else if (event.key === 'ArrowRight') {
+        game.player.setDirection(-1);
+      };
+    
+  });
+};
 
   function createGameOverScreen() {
     var gameOverScreen = buildDom(`
