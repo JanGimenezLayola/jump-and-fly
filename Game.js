@@ -17,4 +17,17 @@ Game.prototype.startGame = function() {
 
 loop();
 
+
+Game.prototype.update = function() {
+
+};
+
+Game.prototype.clear = function() {
+
+};
+
+Game.prototype.draw = function() {
+
+};
+
 };
