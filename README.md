@@ -4,7 +4,7 @@
 Hi! Have you ever jumped from an airplane? In this game you will have to think like a skydiver and dodge the air traffic of birds, planes and other. Move the player with the arrows keys and stay alive as long as possible. 
 
 ## MVP (DOM - CANVAS)
-The game should have 3 screens. The splashScreen (with a start buttob), the gameScreen and the gameoverScreen (with restart and menu buttons). The skydiver should move to left and right and the backgroundSky have to move up to create the movement sensation. If the skydiver colisionate with and enemy 3 times the game should end and redirected to the gameoverScreen.
+The game should have 3 screens. The splashScreen (with a start button), the gameScreen and the gameoverScreen (with restart and menu buttons). The skydiver should move to left and right and the backgroundSky moves up to create the movement sensation. If the skydiver colisionate with an enemy 3 times the game should end and you're redirected to the gameoverScreen.
 
 ## Backlog
 - Create instructions screen + add screen transition
@@ -22,6 +22,7 @@ The game should have 3 screens. The splashScreen (with a start buttob), the game
 - this.update()
 - this.startGame()
 - this.checkColision()
+- this.checkBorders()
 - this.clear()
 
 ### Skydiver
@@ -35,7 +36,6 @@ The game should have 3 screens. The splashScreen (with a start buttob), the game
 #### Methods
 - this.move()
 - this.draw()
-- this.checkBorders()
 - this.updateLives()
 
 ### Enemy 
@@ -72,14 +72,32 @@ The game should have 3 screens. The splashScreen (with a start buttob), the game
 
 ## Task
 - Create project files
+  - index.html
+  - style.css
+  - Game.js
+  - Skydiver.js
+  - Enemy.js
+  - SkyBackground.js
 - Copy boilerplates
 - Set up git & github
-- create 3 screens (splashScreen, gameScreen & gameOverScreen)
+- create screens (buldDom)
+  - splashScreen
+  - gameScreen
+  - gameOverScreen
 - Code screen transitions
 - Create Game loop
+  - inicialize skydiver & enemies
+  - Create Random Enemies (Math.random)
+  - update, clear, draw, checkColisions & checkBorders
 - Create skydiver
+  - Propieties
+  - Methods
 - Create Enemy
+  - Propieties
+  - Methods
 - Create skyBackground
+  - Propieties
+  - Methods
 - Create colisions between skydiver & enemy
 - Game Over condition (3 lives)
 
