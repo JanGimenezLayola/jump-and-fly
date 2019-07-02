@@ -19,12 +19,22 @@ function main() {
   };
   
   function createGameScreen() {
-    var GameScreen = buildDom(`
+    var gameScreen = buildDom(`
       <section>
         <canvas width="600" height="750"></canvas>
       </section>
     `);
   };
+
+  function createGameOverScreen() {
+    var gameScreen = buildDom(`
+      <section>
+        <h1>Game Over</h1>
+        <button>Restart</button>
+        <button>Menu</button>
+      </section>
+    `)
+  }
 
 };
 
