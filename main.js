@@ -10,12 +10,16 @@ function main() {
   };
 
   function createSplashScreen() {
-    var splasScreen = buildDom(`
+    var splashScreen = buildDom(`
       <section> 
         <h1>Jump, Fly & Survive</h1>
         <button>Start</button>
       </section>
     `);
+
+    var startButton = splashScreen.querySelector('button');
+    startButton.addEventListener('click', createGameScreen);
+
   };
   
   function createGameScreen() {
@@ -35,6 +39,8 @@ function main() {
       </section>
     `)
   }
+
+  createSplashScreen();
 
 };
 
