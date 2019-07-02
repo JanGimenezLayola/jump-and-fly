@@ -13,18 +13,19 @@ function Skydiver(canvas) {
  
 };
 
+Skydiver.prototype.setDirection = function(newDirection) {
+  console.log('setDirection')
+  this.direction = newDirection;
+};
+
 Skydiver.prototype.move = function() {
   this.x = this.x + this.direction * this.velocity;
 };
 
 Skydiver.prototype.draw = function() {
-  console.log('inside')
   this.ctx.fillStyle = this.color;
   this.ctx.fillRect(this.x, this.y, this.width, this.height);
 };
 
-Skydiver.prototype.setDirection = function(newDirection) {
-  this.direction = newDirection;
-};
 
 

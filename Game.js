@@ -3,7 +3,7 @@
 function Game(canvas) {
   this.skydiver = null;
   this.enemies = [];
-  this.isGameOver = false;null
+  this.isGameOver = false;
   this.canvas = canvas;
   this.ctx = this.canvas.getContext('2d');
   this.onGameOver = null;
@@ -15,9 +15,12 @@ Game.prototype.startGame = function() {
 
   var loop = () => {
       
+    this.clear();
     this.update();
     this.draw();
-
+    
+    
+    requestAnimationFrame(loop)
   };
 
 loop();
@@ -33,6 +36,5 @@ Game.prototype.clear = function() {
 };
 
 Game.prototype.draw = function() {
-  console.log('hey')
   this.skydiver.draw();
 };

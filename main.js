@@ -37,11 +37,12 @@ function main() {
     document.addEventListener('keydown', function(event) {
       console.log(event)
       if(event.key === 'ArrowLeft') {
-        game.player.setDirection(1);
+        console.log('left')
+        game.skydiver.setDirection(-1);
       } else if (event.key === 'ArrowRight') {
-        game.player.setDirection(-1);
+        console.log('right')
+        game.skydiver.setDirection(1);
       };
-    
   });
 };
 
