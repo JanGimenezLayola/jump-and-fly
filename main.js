@@ -37,10 +37,8 @@ function main() {
     document.addEventListener('keydown', function(event) {
       console.log(event)
       if(event.key === 'ArrowLeft') {
-        console.log('left')
         game.skydiver.setDirection(-1);
       } else if (event.key === 'ArrowRight') {
-        console.log('right')
         game.skydiver.setDirection(1);
       };
   });

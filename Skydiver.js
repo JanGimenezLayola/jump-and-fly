@@ -14,7 +14,6 @@ function Skydiver(canvas) {
 };
 
 Skydiver.prototype.setDirection = function(newDirection) {
-  console.log('setDirection')
   this.direction = newDirection;
 };
 
