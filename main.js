@@ -26,8 +26,6 @@ function main() {
     `);
   };
 
-  createGameScreen();
-
 };
 
 window.addEventListener('load', main);
