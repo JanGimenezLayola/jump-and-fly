@@ -28,6 +28,8 @@ function main() {
         <canvas width="600" height="750"></canvas>
       </section>
     `);
+
+    window.setTimeout(createGameOverScreen, "3000");
   };
 
   function createGameOverScreen() {
