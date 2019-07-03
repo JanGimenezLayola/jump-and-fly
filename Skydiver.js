@@ -11,6 +11,8 @@ function Skydiver(canvas) {
   this.velocity = 5;
   this.color = "black";
   this.lives = 3;
+  this.img = new Image();
+  this.img.src = "./images/skydiver.png";
 };
 
 Skydiver.prototype.setDirection = function(newDirection) {
@@ -22,8 +24,8 @@ Skydiver.prototype.move = function() {
 };
 
 Skydiver.prototype.draw = function() {
-  this.ctx.fillStyle = this.color;
-  this.ctx.fillRect(this.x, this.y, this.width, this.height);
+  var ctx = this.ctx;
+  ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 };
 
 
