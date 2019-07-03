@@ -16,7 +16,7 @@ Game.prototype.startGame = function() {
   var loop = () => {
     
 
-    if(Math.random() > 0.99) {
+    if(Math.random() > 0.97) {
       var randomY = Math.random() * this.canvas.height - 10; 
       if(Math.random() >= 0.5) {
         var newEnemy = new Enemy(this.canvas,randomY, "left");

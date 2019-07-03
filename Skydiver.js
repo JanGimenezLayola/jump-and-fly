@@ -2,14 +2,14 @@
 
 function Skydiver(canvas) {
   this.canvas = canvas; 
-  this.width = 40;
-  this.height = 40;
+  this.width = 80;
+  this.height = 80;
   this.ctx = canvas.getContext('2d');
   this.x = (this.canvas.width / 2) - this.width / 2;
-  this.y = 75; 
+  this.y = 100; 
   this.direction = 0;
-  this.velocity = 3;
-  this.color = "blue";
+  this.velocity = 5;
+  this.color = "black";
  
 };
 

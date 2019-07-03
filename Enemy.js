@@ -5,9 +5,10 @@ function Enemy(canvas, randomY, side) {
   this.ctx = this.canvas.getContext('2d');
   this.y = randomY;
   this.velocity = 3;
+  this.skySlide = -7;
   this.color = "red";
-  this.width = 15;
-  this.height = 8;
+  this.width = 35;
+  this.height = 20;
   if (side === "left") {
     this.direction = 1;
     this.x = 0;
@@ -19,6 +20,7 @@ function Enemy(canvas, randomY, side) {
 
 Enemy.prototype.move = function() {
   this.x = this.x + this.direction * this.velocity;
+  this.y = this.y + this.skySlide;
 };
 
 Enemy.prototype.draw = function() {
