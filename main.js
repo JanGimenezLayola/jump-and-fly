@@ -18,9 +18,24 @@ function main() {
     `);
 
     var startButton = splashScreen.querySelector('button');
-    startButton.addEventListener('click', createGameScreen);
+    startButton.addEventListener('click', createInstructionsScreen);
 
   };
+
+  function createInstructionsScreen() {
+    var instructionsScreen = buildDom(`
+      <section>
+        <h1>Instructions</h1>
+        <li>  
+          <ol>Press Junp button</ol>
+          <ol>Move with left and right keys</ol>
+        </li>
+        <button>Next</button>
+    `)
+
+    var nextButton = instructionsScreen.querySelector('button');
+    nextButton.addEventListener('click', createGameScreen)
+  }
   
   function createGameScreen() {
     var gameScreen = buildDom(`
@@ -47,7 +62,9 @@ function main() {
   });
   var button = document.querySelector('.start')
   button.addEventListener("click", function() {
-    game.skyBackground.setStart(-5);
+  
+    game.enemiesAppear();
+    game.skyBackground.setStart(); 
   });
 };
 

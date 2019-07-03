@@ -22,6 +22,6 @@ SkyBackground.prototype.draw = function() {
   ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 };
 
-SkyBackground.prototype.setStart = function(five) {
-  this.skySlide = five;
+SkyBackground.prototype.setStart = function() {
+  this.skySlide = -5;
 };

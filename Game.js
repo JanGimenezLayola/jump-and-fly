@@ -6,21 +6,24 @@ function Game(canvas) {
   this.isGameOver = false;
   this.canvas = canvas;
   this.ctx = this.canvas.getContext('2d');
-  this.onGameOver = null;
+  this.onGameOver = false;
+  this.startedDrop = false;
 }
 
 Game.prototype.startGame = function() {
 
   this.skydiver = new Skydiver(this.canvas)
   this.skyBackground = new SkyBackground(this.canvas)
+  this.enemy = new Enemy(this.canvas);
+
   var loop = () => {
-    
+
     if(Math.random() > 0.97) {
       var randomY = Math.random() * this.canvas.height - 125; 
       if(Math.random() >= 0.5) {
-        var newEnemy = new Enemy(this.canvas,randomY, "left");
-      } else {
         var newEnemy = new Enemy(this.canvas,randomY, "right");
+      } else {
+        var newEnemy = new Enemy(this.canvas,randomY, "left");
       }
       this.enemies.push(newEnemy);
     };
@@ -28,6 +31,9 @@ Game.prototype.startGame = function() {
     this.update();
     this.draw();
     this.checkCollisions();
+    if(this.startedDrop){
+      this.enemies.forEach((enemy)=> enemy.respawn());
+    }
     if(!this.isGameOver) {
       requestAnimationFrame(loop);
     } else {
@@ -39,10 +45,19 @@ loop();
 };
 
 Game.prototype.update = function() {
+  console.log('im update')
   this.skyBackground.move()
   this.skydiver.move();
-  this.enemies.forEach(function(enemy) {
+  this.enemies.forEach((enemy, index) =>{
     enemy.move();
+    if(enemy.x < -80 || enemy.x > this.canvas.width){
+      this.enemies.splice(index, 1);
+    }
+    if(enemy.y > this.canvas.height || enemy.y < 0){
+      enemy.y = 0;
+    }
+    
+    console.log(enemy)
   });
 };
 
@@ -79,4 +94,7 @@ Game.prototype.checkCollisions = function() {
 
  Game.prototype.gameOverCallback = function(callback) {
   this.onGameOver = callback;
+};
+Game.prototype.enemiesAppear = function() {
+  this.startedDrop = true;
 };
