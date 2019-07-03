@@ -4,7 +4,7 @@ function Enemy(canvas, randomY, side) {
   this.canvas = canvas;
   this.ctx = this.canvas.getContext('2d');
   this.y = randomY;
-  this.velocity = 3;
+  this.velocity = 6;
   this.skySlide = -5;
   this.color = "red";
   this.width = 35;

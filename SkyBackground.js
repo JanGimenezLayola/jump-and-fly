@@ -8,7 +8,9 @@ function SkyBackground(canvas) {
   this.skySlide = -5;
   this.color = "blue";
   this.width = this.canvas.width;
-  this.height = 2000;
+  this.height = 12000;
+  this.img = new Image();
+  this.img.src = "./images/background.png"
 }
 
 SkyBackground.prototype.move = function() {
@@ -16,7 +18,7 @@ SkyBackground.prototype.move = function() {
 };
 
 SkyBackground.prototype.draw = function() {
-  console.log('skyback draw')
-  this.ctx.fillStyle = this.color;
-  this.ctx.fillRect(this.x, this.y, this.width, this.height);
+
+  var ctx = this.ctx;
+  ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 };
