@@ -25,6 +25,7 @@ function main() {
   function createGameScreen() {
     var gameScreen = buildDom(`
       <section>
+        <button class="start">JUMP</button>
         <canvas width="600" height="750"></canvas>
       </section>
     `);
@@ -37,12 +38,16 @@ function main() {
     game.startGame();
 
     document.addEventListener('keydown', function(event) {
-      console.log(event)
       if(event.key === 'ArrowLeft') {
         game.skydiver.setDirection(-1);
       } else if (event.key === 'ArrowRight') {
         game.skydiver.setDirection(1);
       };
+
+  });
+  var button = document.querySelector('.start')
+  button.addEventListener("click", function() {
+    game.skyBackground.setStart(-5);
   });
 };
 

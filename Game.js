@@ -13,19 +13,15 @@ Game.prototype.startGame = function() {
 
   this.skydiver = new Skydiver(this.canvas)
   this.skyBackground = new SkyBackground(this.canvas)
-
   var loop = () => {
     
-
     if(Math.random() > 0.97) {
       var randomY = Math.random() * this.canvas.height - 125; 
       if(Math.random() >= 0.5) {
         var newEnemy = new Enemy(this.canvas,randomY, "left");
       } else {
         var newEnemy = new Enemy(this.canvas,randomY, "right");
-
       }
-  
       this.enemies.push(newEnemy);
     };
     this.clear();
@@ -40,7 +36,6 @@ Game.prototype.startGame = function() {
   };
 
 loop();
-
 };
 
 Game.prototype.update = function() {
@@ -50,6 +45,7 @@ Game.prototype.update = function() {
     enemy.move();
   });
 };
+
 
 Game.prototype.clear = function() {
   this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
