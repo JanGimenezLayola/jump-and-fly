@@ -7,8 +7,10 @@ function Enemy(canvas, randomY, side) {
   this.velocity = 0;
   this.skySlide = -5;
   this.color = "red";
-  this.width = 35;
-  this.height = 20;
+  this.width = 60;
+  this.height = 40;
+  this.img = new Image();
+  this.img.src = "./images/eagle-looking-left.png";
   if (side === "left") {
     this.direction = 1;
     this.x = 0 - this.width;
@@ -25,8 +27,8 @@ Enemy.prototype.move = function() {
 };
 
 Enemy.prototype.draw = function() {
-   this.ctx.fillStyle = this.color;
-  this.ctx.fillRect(this.x, this.y, this.width, this.height);
+  var ctx = this.ctx;
+  ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 };
 
 Enemy.prototype.respawn = function() {
