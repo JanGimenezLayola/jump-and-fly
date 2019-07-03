@@ -45,7 +45,6 @@ loop();
 };
 
 Game.prototype.update = function() {
-  console.log('im update')
   this.skyBackground.move()
   this.skydiver.move();
   this.enemies.forEach((enemy, index) =>{
@@ -53,10 +52,7 @@ Game.prototype.update = function() {
     if(enemy.x < -80 || enemy.x > this.canvas.width){
       this.enemies.splice(index, 1);
     }
-    if(enemy.y > this.canvas.height || enemy.y < 0){
-      enemy.y = 0;
-    }
-    
+
     console.log(enemy)
   });
 };
