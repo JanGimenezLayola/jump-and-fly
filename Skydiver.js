@@ -10,7 +10,7 @@ function Skydiver(canvas) {
   this.direction = 0;
   this.velocity = 5;
   this.color = "black";
- 
+  this.lives = 3;
 };
 
 Skydiver.prototype.setDirection = function(newDirection) {

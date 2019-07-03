@@ -32,8 +32,11 @@ Game.prototype.startGame = function() {
     this.update();
     this.draw();
     this.checkCollisions();
-    
-    requestAnimationFrame(loop)
+    if(!this.isGameOver) {
+      requestAnimationFrame(loop);
+    } else {
+      this.onGameOver();
+    }
   };
 
 loop();
@@ -70,10 +73,14 @@ Game.prototype.checkCollisions = function() {
 
     if (rightLeft && leftRight && bottomTop && Topbottom) {
       this.enemies.splice(index, 1);
-      this.player.lives --;
-      if(this.player.lives === 0) {
+      this.skydiver.lives --;
+      if(this.skydiver.lives === 0) {
         this.isGameOver = true; 
       };
     };
   });
  };
+
+ Game.prototype.gameOverCallback = function(callback) {
+  this.onGameOver = callback;
+};
