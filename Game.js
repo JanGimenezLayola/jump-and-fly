@@ -12,6 +12,7 @@ function Game(canvas) {
 Game.prototype.startGame = function() {
 
   this.skydiver = new Skydiver(this.canvas)
+  this.skyBackground = new SkyBackground(this.canvas)
 
   var loop = () => {
     
@@ -30,6 +31,7 @@ Game.prototype.startGame = function() {
     this.clear();
     this.update();
     this.draw();
+    this.checkCollisions();
     
     requestAnimationFrame(loop)
   };
@@ -39,6 +41,7 @@ loop();
 };
 
 Game.prototype.update = function() {
+  this.skyBackground.move()
   this.skydiver.move();
   this.enemies.forEach(function(enemy) {
     enemy.move();
@@ -50,8 +53,27 @@ Game.prototype.clear = function() {
 };
 
 Game.prototype.draw = function() {
+  this.skyBackground.draw()
   this.skydiver.draw();
   this.enemies.forEach(function(enemy) {
     enemy.draw();
-  });
+  });    
+
 };
+
+Game.prototype.checkCollisions = function() {
+  this.enemies.forEach((enemy, index) => {
+    var rightLeft = this.skydiver.x + this.skydiver.width >= enemy.x;
+    var leftRight = this.skydiver.x <= enemy.x + enemy.width;
+    var bottomTop = this.skydiver.y + this.skydiver.height >= enemy.y;
+    var Topbottom = this.skydiver.y <= enemy.y + enemy.height;
+
+    if (rightLeft && leftRight && bottomTop && Topbottom) {
+      this.enemies.splice(index, 1);
+      this.player.lives --;
+      if(this.player.lives === 0) {
+        this.isGameOver = true; 
+      };
+    };
+  });
+ };
