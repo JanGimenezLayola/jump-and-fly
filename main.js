@@ -26,13 +26,12 @@ function main() {
 
   function createInstructionsScreen() {
     var instructionsScreen = buildDom(`
-      <section>
-        <h1>Instructions</h1>
-        <li>  
-          <ol>Press Junp button</ol>
-          <ol>Move with left and right keys</ol>
-        </li>
+      <section class="instructions">
+        <h1>Instructions</h1>  
+        <p>1. Select dificulty </p>
+        <p>2. Move with left and right keys</p>
         <button class="next">Next</button>
+      </section>
     `)
 
     var nextButton = instructionsScreen.querySelector('.next');
