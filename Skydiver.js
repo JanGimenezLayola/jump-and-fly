@@ -20,7 +20,15 @@ Skydiver.prototype.setDirection = function(newDirection) {
 };
 
 Skydiver.prototype.move = function() {
-  this.x = this.x + this.direction * this.velocity;
+  if (this.x < 0) {
+    this.x = 0;
+    this.direction = 0;
+  } else if (this.x + this.width > this.canvas.width) {
+    this.x = this.canvas.width - this.width;
+    this.direction = 0;
+  } else {
+    this.x = this.x + this.direction * this.velocity;
+  }
 };
 
 Skydiver.prototype.draw = function() {
