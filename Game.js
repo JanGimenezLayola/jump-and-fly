@@ -8,6 +8,7 @@ function Game(canvas) {
   this.ctx = this.canvas.getContext('2d');
   this.onGameOver = false;
   this.startedDrop = false;
+  this.dificulty = 1;
 }
 
 Game.prototype.startGame = function() {
@@ -18,7 +19,7 @@ Game.prototype.startGame = function() {
 
   var loop = () => {
 
-    if(Math.random() > 0.97) {
+    if(Math.random() > this.dificulty) {
       var randomY = Math.random() * this.canvas.height - 125; 
       if(Math.random() >= 0.5) {
         var newEnemy = new Enemy(this.canvas,randomY, "right");
@@ -93,4 +94,12 @@ Game.prototype.checkCollisions = function() {
 };
 Game.prototype.enemiesAppear = function() {
   this.startedDrop = true;
+  this.dificulty = 0.975;
+  console.log(this.dificulty)
+};
+
+Game.prototype.enemiesAppearHardcore = function() {
+  this.startedDrop = true;
+  this.dificulty = 0.928;
+  console.log(this.dificulty)
 };

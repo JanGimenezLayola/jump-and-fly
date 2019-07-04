@@ -25,6 +25,8 @@ body {
 
 h1 {
   color: blue ;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 100px;
 }
 
 h2 {}
@@ -92,6 +94,23 @@ video {
 
 /* ---- section ---- */
 
+.canvas {
+  margin-left: 35%;
+  margin-right: 35%
+}
+
+.dificulty {
+  margin-left: 35%;
+  margin-right: 32.5%;
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+}
+
+.dificulty button {
+  flex-grow: 1;
+}
+
 section.testimonials {
   // ...
 }
@@ -109,6 +128,17 @@ section.testimonials .button {
 }
 
 .start-button {
-  margin: 0 850px 100px 385px;
+  margin: 0 60% 100px 20%;
   height: 100px;
+
+}
+
+.eagle {
+  width: 750px;
+  height: 650px;
+}
+
+.gameover {
+  display: flex;
+  flex-direction: column;
 }

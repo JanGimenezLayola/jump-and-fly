@@ -19,7 +19,7 @@ function main() {
       </section>
     `);
 
-    var startButton = splashScreen.querySelector('button');
+    var startButton = splashScreen.querySelector('.start-button');
     startButton.addEventListener('click', createInstructionsScreen);
 
   };
@@ -32,18 +32,21 @@ function main() {
           <ol>Press Junp button</ol>
           <ol>Move with left and right keys</ol>
         </li>
-        <button>Next</button>
+        <button class="next">Next</button>
     `)
 
-    var nextButton = instructionsScreen.querySelector('button');
+    var nextButton = instructionsScreen.querySelector('.next');
     nextButton.addEventListener('click', createGameScreen)
   }
   
   function createGameScreen() {
     var gameScreen = buildDom(`
-      <section>
-        <button class="start">JUMP</button>
+      <section class="canvas">
         <canvas width="600" height="750"></canvas>
+      </section>
+      <section class="dificulty">
+        <button class="start">EASY JUMP</button>
+        <button class="hardcore">HARDCORE JUMP</button>
       </section>
     `);
 
@@ -64,16 +67,23 @@ function main() {
   });
   var button = document.querySelector('.start')
   button.addEventListener("click", function() {
-  
     game.enemiesAppear();
     game.skyBackground.setStart(); 
   });
+
+  var button = document.querySelector('.hardcore')
+  button.addEventListener("click", function() {
+    game.enemiesAppearHardcore();
+    game.skyBackground.setStart(); 
+  });
 };
+
 
   function createGameOverScreen() {
     var gameOverScreen = buildDom(`
       <section class="gameover">
         <h1>Game Over</h1>
+        <img class="eagle" src="./images/game-over-eagle.png">
         <button id="restart-button">Restart</button>
         <button id="menu-button">Menu</button>
       </section>
