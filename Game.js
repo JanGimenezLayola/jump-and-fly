@@ -9,6 +9,7 @@ function Game(canvas) {
   this.onGameOver = false;
   this.startedDrop = false;
   this.dificulty = 1;
+  this.counter = 0;
   this.score = 0;
 }
 
@@ -19,7 +20,7 @@ Game.prototype.startGame = function() {
   this.enemy = new Enemy(this.canvas);
 
   var loop = () => {
-
+    this.counter++;
     if(Math.random() > this.dificulty) {
       var randomY = Math.random() * this.canvas.height - 125; 
       if(Math.random() >= 0.5) {
@@ -34,7 +35,11 @@ Game.prototype.startGame = function() {
     this.draw();
     this.checkCollisions();
     if(this.startedDrop){
-          this.scoreFunction();
+      if(this.counter % 60 === 0) {
+        this.score++;
+        console.log(this.score);
+      }    
+      
       this.enemies.forEach((enemy)=> enemy.respawn());
     }
     if(!this.isGameOver) {
@@ -55,8 +60,6 @@ Game.prototype.update = function() {
     if(enemy.x < -80 || enemy.x > this.canvas.width){
       this.enemies.splice(index, 1);
     }
-
-    console.log(enemy)
   });
 };
 
