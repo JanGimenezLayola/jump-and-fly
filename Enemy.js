@@ -6,7 +6,6 @@ function Enemy(canvas, randomY, side) {
   this.y = randomY;
   this.velocity = 0;
   this.skySlide = -5;
-  this.color = "red";
   this.width = 60;
   this.height = 40;
   this.img = new Image();
