@@ -9,6 +9,7 @@ function Game(canvas) {
   this.onGameOver = false;
   this.startedDrop = false;
   this.dificulty = 1;
+  this.score = 0;
 }
 
 Game.prototype.startGame = function() {
@@ -33,6 +34,7 @@ Game.prototype.startGame = function() {
     this.draw();
     this.checkCollisions();
     if(this.startedDrop){
+          this.scoreFunction();
       this.enemies.forEach((enemy)=> enemy.respawn());
     }
     if(!this.isGameOver) {
@@ -103,3 +105,8 @@ Game.prototype.enemiesAppearHardcore = function() {
   this.dificulty = 0.928;
   console.log(this.dificulty)
 };
+
+Game.prototype.scoreFunction = function() {
+  this.score = this.score + 1;
+  console.log(this.score);
+}
