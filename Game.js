@@ -19,6 +19,8 @@ Game.prototype.startGame = function() {
   this.skyBackground = new SkyBackground(this.canvas)
   this.enemy = new Enemy(this.canvas);
 
+
+
   var loop = () => {
     this.counter++;
     if(Math.random() > this.dificulty) {

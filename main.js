@@ -26,7 +26,7 @@ function main() {
 
   function createInstructionsScreen() {
     var instructionsScreen = buildDom(`
-      <section class="instructions">
+    <section class="instructions">
         <h1>Instructions</h1>  
         <p>1. Select dificulty </p>
         <p>2. Move with left and right keys</p>
@@ -40,6 +40,7 @@ function main() {
   
   function createGameScreen() {
     var gameScreen = buildDom(`
+    <section class="canvas-background">   
       <section class="canvas">
         <canvas width="600" height="750"></canvas>
       </section>
@@ -47,6 +48,8 @@ function main() {
         <button class="start">EASY JUMP</button>
         <button class="hardcore">HARDCORE JUMP</button>
       </section>
+      </section>
+
     `);
 
     var canvas = document.querySelector('canvas');
