@@ -11,9 +11,11 @@ function main() {
 
   function createSplashScreen() {
     var splashScreen = buildDom(`
-      <section> 
-        <h1>Jump, Fly & Survive</h1>
-        <button>Start</button>
+      <section class="splash"> 
+      <head id="site-header">
+        <video src="./images/final-title.mp4" autoplay loop muted></video>
+      </head>
+        <button class="start-button">Start</button>
       </section>
     `);
 
@@ -70,7 +72,7 @@ function main() {
 
   function createGameOverScreen() {
     var gameOverScreen = buildDom(`
-      <section>
+      <section class="gameover">
         <h1>Game Over</h1>
         <button id="restart-button">Restart</button>
         <button id="menu-button">Menu</button>

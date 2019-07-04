@@ -4,7 +4,7 @@ function SkyBackground(canvas) {
   this.ctx = this.canvas.getContext('2d');
   this.x = 0;
   this.y = 0;
-  this.velocity = 3;
+  //this.velocity = 3;
   this.skySlide = 0;
   this.color = "blue";
   this.width = this.canvas.width;

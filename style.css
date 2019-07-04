@@ -23,7 +23,9 @@ body {
   line-height: 147%;
 }
 
-h1 {}
+h1 {
+  color: blue ;
+}
 
 h2 {}
 
@@ -49,7 +51,7 @@ p {
   background: #111;
 }
 
-#site-main {
+#site-main {site-header
   margin-bottom: 60px;
 }
 
@@ -57,10 +59,6 @@ p {
   margin: 0 20px;
 }
 
-.section {
-  margin-bottom: 20px;
-  padding-top: 20px;
-}
 
 @media (min-width: 768px) {
   .container {
@@ -73,6 +71,9 @@ canvas {
   border: 2px solid black;
 }
 
+video {
+  background: none;
+}
 
 
 /* ---- components ---- */
@@ -97,4 +98,17 @@ section.testimonials {
 
 section.testimonials .button {
   margin-bottom: 10px;
+}
+
+.splash  {
+  background-color: #040639;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.start-button {
+  margin: 0 850px 100px 385px;
+  height: 100px;
 }
