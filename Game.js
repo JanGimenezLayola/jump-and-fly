@@ -23,7 +23,7 @@ Game.prototype.startGame = function() {
  
 
   var loop = () => {
-    if (this.score === 5) {
+    if (this.score === 12) {
       this.win();
       this.onGameOver()
       console.log(this.win)
