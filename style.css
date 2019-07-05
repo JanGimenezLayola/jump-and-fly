@@ -85,6 +85,12 @@ video {
 
 
 /* ---- components ---- */
+@keyframes butt-animation {
+  50% {
+    transform: scale(1.2, 1.2)
+  }
+}
+
 
 button {
 	-moz-box-shadow: 7px 7px 0px 0px #943100;
@@ -103,21 +109,16 @@ button {
 	font-weight:bold;
 	padding:20px 18px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #43d42d;
+  text-shadow:0px 1px 0px #43d42d;
 }
-.myButton:hover {
-	background-color:#fc915b;
+.button:hover {
+	background-color: #fc915b;
 }
-.myButton:active {
+.button:active {
 	position:relative;
 	top:1px;
 }
 
-
-.button-alt {
-  color: blue;
-  background-color: #fff;
-}
 
 /* ---- section ---- */
 .canvas-background {
@@ -205,6 +206,11 @@ section.testimonials .button {
   padding-left: 30vh;
 }
 
+.anim {
+  animation: butt-animation 2s infinite ;
+}
+
 .box button {
   padding: 20px 80px;
+  animation: butt-animation 2s infinite ;
 }

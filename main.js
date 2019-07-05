@@ -15,7 +15,7 @@ function main() {
       <head id="site-header">
         <video src="./images/final-title.mp4" autoplay loop muted></video>
       </head>
-        <button class="start-button">Start</button>
+        <button  class="start-button anim">Start</button>
       </section>
     `);
 
