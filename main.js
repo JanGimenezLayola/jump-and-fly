@@ -90,7 +90,7 @@ function createWinScreen() {
   var winScreen = buildDom(`
   <section class="gamewin">
     <h1>Good job, you survive</h1>
-    <img class="eagle" src="./images/game-over-eagle.png">
+    <img class="eagle" src="./images/win-img.png">
     <button id="restart-button">Restart</button>
     <button id="menu-button">Menu</button>
   </section>
