@@ -7,6 +7,7 @@ function Game(canvas) {
   this.canvas = canvas;
   this.ctx = this.canvas.getContext('2d');
   this.onGameOver = false;
+  this.win = false;
   this.startedDrop = false;
   this.dificulty = 1;
   this.counter = 0;
@@ -19,9 +20,15 @@ Game.prototype.startGame = function() {
   this.skyBackground = new SkyBackground(this.canvas)
   this.enemy = new Enemy(this.canvas);
 
-
+ 
 
   var loop = () => {
+    if (this.score === 5) {
+      this.win();
+      this.onGameOver()
+      console.log(this.win)
+    };
+
     this.counter++;
     if(Math.random() > this.dificulty) {
       var randomY = Math.random() * this.canvas.height - 125; 
@@ -47,12 +54,15 @@ Game.prototype.startGame = function() {
     if(!this.isGameOver) {
       requestAnimationFrame(loop);
     } else {
-      this.onGameOver();
+      this.GameOver();
     }
+   
   };
+ loop();
+ };
 
-loop();
-};
+
+
 
 Game.prototype.update = function() {
   this.skyBackground.move()
@@ -97,8 +107,14 @@ Game.prototype.checkCollisions = function() {
  };
 
  Game.prototype.gameOverCallback = function(callback) {
-  this.onGameOver = callback;
+  this.GameOver = callback;
 };
+
+Game.prototype.gameWinCallback = function(callback) {
+  this.win = callback;
+  this.onGameOver = false;
+};
+
 Game.prototype.enemiesAppear = function() {
   this.startedDrop = true;
   this.dificulty = 0.975;
@@ -114,4 +130,4 @@ Game.prototype.enemiesAppearHardcore = function() {
 Game.prototype.scoreFunction = function() {
   this.score = this.score + 1;
   console.log(this.score);
-}
+};

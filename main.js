@@ -56,6 +56,8 @@ function main() {
     var game = new Game(canvas);
 
     game.gameOverCallback(createGameOverScreen);
+    game.gameWinCallback(createWinScreen);
+
 
     game.startGame();
 
@@ -78,6 +80,26 @@ function main() {
     game.enemiesAppearHardcore();
     game.skyBackground.setStart(); 
   });
+};
+
+
+
+function createWinScreen() {
+  var winScreen = buildDom(`
+  <section class="winscreen">
+    <h1>Good job, you survive</h1>
+    <img class="eagle" src="./images/game-over-eagle.png">
+    <button id="restart-button">Restart</button>
+    <button id="menu-button">Menu</button>
+  </section>
+`);  
+
+var restartButton = winScreen.querySelector('#restart-button');
+restartButton.addEventListener('click', createGameScreen);
+
+var menuButton = winScreen.querySelector('#menu-button');
+menuButton.addEventListener('click', createSplashScreen);
+
 };
 
 
