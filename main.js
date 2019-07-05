@@ -27,10 +27,12 @@ function main() {
   function createInstructionsScreen() {
     var instructionsScreen = buildDom(`
     <section class="instructions">
+      <article class="box">
         <h1>Instructions</h1>  
         <p>1. Select dificulty </p>
-        <p>2. Move with left and right keys</p>
+        <p>2. Move with left and right keys</p>      
         <button class="next">Next</button>
+      </article>
       </section>
     `)
 
@@ -86,7 +88,7 @@ function main() {
 
 function createWinScreen() {
   var winScreen = buildDom(`
-  <section class="winscreen">
+  <section class="gamewin">
     <h1>Good job, you survive</h1>
     <img class="eagle" src="./images/game-over-eagle.png">
     <button id="restart-button">Restart</button>
