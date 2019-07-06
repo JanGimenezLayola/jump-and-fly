@@ -7,10 +7,14 @@ Hi! Have you ever jumped from an airplane? In this game you will have to think l
 The game should have 3 screens. The splashScreen (with a start button), the gameScreen and the gameoverScreen (with restart and menu buttons). The skydiver should move to left and right and the backgroundSky moves up to create the movement sensation. If the skydiver colisionate with an enemy 3 times the game should end and you're redirected to the gameoverScreen.
 
 ## Backlog
-- Create instructions screen + add screen transition
-- Create colisions with canvas
-- Create score (time alive)
+- Show score in gameScreen and GameOver/Win Screens (time alive)
+- Show lives in gameScreen
 - Create diferents enemies skins --> bird/airplane/...
+- skydive to parachute when player win
+- Make responsive
+- Mobile Play
+- Music
+- Sound effects
 
 ## Data structure
 ### Game
@@ -63,6 +67,10 @@ The game should have 3 screens. The splashScreen (with a start button), the game
 - this.move()
 - this.draw()
 
+### SkyBackgroun
+ - Enemies clone
+
+
 ## States y States Transitions
 - splashScreen (button start --> instructionScreen)
 - instructionScreen (button jump --> gameScreen)
@@ -99,7 +107,9 @@ The game should have 3 screens. The splashScreen (with a start button), the game
   - Propieties
   - Methods
 - Create colisions between skydiver & enemy
+- Create two dificulties
 - Game Over condition (3 lives)
+- Game Win condition (50 seconds)
 
 ## Links
 
@@ -108,12 +118,15 @@ The game should have 3 screens. The splashScreen (with a start button), the game
 [Link url](https://trello.com/b/rU0lcHdn)
 
 
-### Git
+### GitHub
 URls for the project repo and deploy
 [Link Repo](https://github.com/JanGimenezLayola/jump-and-fly)
-[Link Deploy](http://github.com)
+[Link Deploy](https://jangimenezlayola.github.io/jump-fly-survive/)
 
 
 ### Slides
-URls for the project presentation (slides)
-[Link Slides.com](http://slides.com)
+URls for the project presentation 
+[Link](https://docs.google.com/presentation/d/1YRPMV9xQFFX52llpClxsIa5pXln-WHnRVKY-KfacYpo/edit?usp=sharing)
+
+
+------------------------------------------------Created by Jan Gimenez Layola-----------------------------------------------
